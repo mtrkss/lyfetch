@@ -4,7 +4,7 @@ another posix sysinfo fetch
 
 ## Installation:
 ```sh
-git clone https://github.com/its-Lyn/lyfetch
+git clone https://github.com/mtrkss/lyfetch
 cd lyfetch
 
 sudo make install
