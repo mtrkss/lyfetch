@@ -1,17 +1,28 @@
 #!/bin/sh
 
-# Colours
+# colors
+if which tput 1>/dev/null 2>&1
+then
 RED="$(tput setaf 1 bold)"
 GREEN="$(tput setaf 2 bold)"
 YELLOW="$(tput setaf 3 bold)"
 MAGENTA="$(tput setaf 5 bold)"
-NC="$(tput sgr0)"
-
+NC="$(tput sgr0 2>/dev/null)"
 BLUE="$(tput setaf 14 bold)"
-PINK="$(tput setaf 217 bold)"
+PINK="$(tput setaf 217 bold"
 WHITE="$(tput setaf 7 bold)"
+else
+RED='\e[1;31m'
+GREEN='\e[1;32m'
+YELLOW='\e[1;33m'
+MAGENTA='\e[1;35m'
+NC='\e[0m'
+BLUE='\x1b[1;96m'
+PINK='\x1b[1;38;2;245;169;184m'
+WHITE='\x1b[1;97m'
+fi
 
-# Sys (sus) info
+# sysinfo
 NAME=$(whoami)@$(uname -n)
 OS=$(. /etc/os-release; echo "$PRETTY_NAME" || echo "$NAME")
 KERNEL=$(uname -r)
