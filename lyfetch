@@ -12,6 +12,7 @@ BLUE="$(tput setaf 14 bold)"
 PINK="$(tput setaf 217 bold)"
 WHITE="$(tput setaf 7 bold)"
 elif ! echo -e 'test' | grep -q "\-e" 1>/dev/null 2>&1
+then
 RED="$(echo -e '\e[1;31m')"
 GREEN="$(echo -e '\e[1;32m')"
 YELLOW="$(echo -e '\e[1;33m')"
