@@ -11,15 +11,15 @@ NC="$(tput sgr0)"
 BLUE="$(tput setaf 14 bold)"
 PINK="$(tput setaf 217 bold)"
 WHITE="$(tput setaf 7 bold)"
-else
-RED='\e[1;31m'
-GREEN='\e[1;32m'
-YELLOW='\e[1;33m'
-MAGENTA='\e[1;35m'
-NC='\e[0m'
-BLUE='\x1b[1;96m'
-PINK='\x1b[1;38;2;245;169;184m'
-WHITE='\x1b[1;97m'
+elif ! echo -e 'test' | grep -q "\-e" 1>/dev/null 2>&1
+RED="$(echo -e '\e[1;31m')"
+GREEN="$(echo -e '\e[1;32m')"
+YELLOW="$(echo -e '\e[1;33m')"
+MAGENTA="$(echo -e '\e[1;35m')"
+NC="$(echo -e '\e[0m')"
+BLUE="$(echo -e '\x1b[1;96m')"
+PINK="$(echo -e '\x1b[1;38;2;245;169;184m')"
+WHITE="$(echo -e '\x1b[1;97m')"
 fi
 
 # sysinfo
